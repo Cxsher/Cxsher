@@ -1,5 +1,0 @@
-namespace L {
-    const char* getVersion(){
-        return "${L_VERSION_MAJOR}.${L_VERSION_MINOR}.${L_VERSION_PATCH}";
-    }
-}

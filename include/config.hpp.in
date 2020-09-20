@@ -1,0 +1,5 @@
+#pragma once
+#include <cxsher.hpp>
+namespace Cxsher{
+    extern const std::string version = "${cxsher_VERSION_MAJOR}.${cxsher_VERSION_MINOR}.${cxsher_VERSION_PATCH}";
+}
