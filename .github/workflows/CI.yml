@@ -25,7 +25,7 @@ jobs:
         run: cd out &&make package
       - uses: actions/checkout@v2
 
-  build:
+  chores:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
