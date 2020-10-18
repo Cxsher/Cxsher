@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Install
-        run:
+        run: 
           sudo apt-get remove g++;
           sudo apt-get install -y cmake g++-9
       - name: CMake
@@ -25,7 +25,7 @@ jobs:
         run: cd out &&make package
       - uses: actions/checkout@v2
 
-  chores:
+  chore:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -35,7 +35,6 @@ jobs:
         run: 
           sudo npm install -g yarn;
           yarn;
-          sudo apt-get install -y clang-format
       - name: Changelog
         run: yarn run version
       - name: Commit
