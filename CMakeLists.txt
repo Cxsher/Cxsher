@@ -19,11 +19,17 @@ configure_file(
   "${CMAKE_CURRENT_SOURCE_DIR}/include/cxsher/config.hpp"
 )
 
-#add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/libs/libuv")
+add_subdirectory(./lib/gflags)
+add_subdirectory(./lib/glog)
+include_directories(./lib/glog/src)
+include_directories(./lib/gflags/src)
+include_directories(${CMAKE_BINARY_DIR}/lib/glog)
+include_directories(${CMAKE_BINARY_DIR}/lib/gflags)
 include_directories(include)
-#include_directories(libs/libuv/include)
 file(GLOB_RECURSE libcxsher_SOURCES CONFIGURE_DEPENDS src/cxsher/*.cpp)
 
 add_library(libcxsher OBJECT STATIC ${libcxsher_SOURCES})
 add_executable(cxsher src/cxsher.cpp $<TARGET_OBJECTS:libcxsher>)
-#target_link_libraries(cxsher uv_a)
+
+target_link_libraries(cxsher glog)
+target_link_libraries(cxsher gflags)
