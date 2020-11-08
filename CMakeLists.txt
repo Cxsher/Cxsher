@@ -25,6 +25,8 @@ include_directories(./lib/glog/src)
 include_directories(./lib/gflags/src)
 include_directories(${CMAKE_BINARY_DIR}/lib/glog)
 include_directories(${CMAKE_BINARY_DIR}/lib/gflags)
+include_directories(${CMAKE_BINARY_DIR}/lib/glog/glog)
+include_directories(${CMAKE_BINARY_DIR}/lib/gflags/include)
 include_directories(include)
 file(GLOB_RECURSE libcxsher_SOURCES CONFIGURE_DEPENDS src/cxsher/*.cpp)
 
